@@ -1,3 +1,3 @@
 public enum Mast {
-     CHERVY, BUBI, KRESTY, PIKI;
+    ЧЕРВИ, БУБИ, ПИКИ, КРЕСТИ;
 }
