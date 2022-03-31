@@ -2,6 +2,7 @@ public class Card {
     private Value value;
     private Mast mast;
 
+
     public Card(Value value, Mast mast) {
         this.value = value;
         this.mast = mast;
