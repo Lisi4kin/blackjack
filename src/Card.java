@@ -1,5 +1,5 @@
 public class Card {
-    private Value value;
+    protected Value value;
     private Mast mast;
 
 
