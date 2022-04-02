@@ -1,8 +1,8 @@
 public enum Mast {
-    Hearts ("ЧЕРВИ"),
-    Diamonds ("БУБИ"),
-    Spades ("ПИКИ"),
-    Clubs ("КРЕСТИ");
+    HEARTS ("ЧЕРВИ"),
+    DIAMONDS ("БУБИ"),
+    SPADES ("ПИКИ"),
+    CLUBS ("КРЕСТИ");
 
     private String mast;
 
