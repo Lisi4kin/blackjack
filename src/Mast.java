@@ -3,7 +3,7 @@ public enum Mast {
     Diamonds ("БУБИ"),
     Spades ("ПИКИ"),
     Clubs ("КРЕСТИ");
-
+// todo нужен капс
     private String mast;
 
     Mast(String mast) {

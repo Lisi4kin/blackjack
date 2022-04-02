@@ -1,1 +1,6 @@
 /.idea/
+/out/production/blackjack/Card.class
+/out/production/blackjack/Deck.class
+/out/production/blackjack/Mast.class
+/out/production/blackjack/Play.class
+/out/production/blackjack/Value.class
