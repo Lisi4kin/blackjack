@@ -11,7 +11,4 @@ public class Player {
     public void clearHand() {
         hand.clear();
     }
-    public int showScore() {
-        hand.forEach();
-    }
 }

@@ -1,15 +1,27 @@
 public enum Value {
-    ДВОЙКА, ТРОЙКА, ЧЕТВЕРКА, ПЯТЁРКА, ШЕСТЁРКА, СЕМЁРКА, ВОСЬМЁРКА, ДЕВЯТКА, ДЕСЯТКА, ВАЛЕТ, ДАМА, КОРОЛЬ, ТУЗ;
+    TWO("ДВОЙКА"),
+    THREE("ТРОЙКА"),
+    FOUR("ЧЕТВЕРКА"),
+    FIVE("ПЯТЁРКА"),
+    SIX("ШЕСТЁРКА"),
+    SEVEN("СЕМЁРКА"),
+    EIGHT("ВОСЬМЁРКА"),
+    NINE("ДЕВЯТКА"),
+    TEN("ДЕСЯТКА"),
+    JACK("ВАЛЕТ"),
+    QUEEN("ДАМА"),
+    KING("КОРОЛЬ"),
+    ACE("ТУЗ");
 
-//    TWO("Двойка");
-//
-//    private String label;
-//
-//    Value(String label) {
-//        this.label = label;
-//    }
-//
-//    @Override
-//    public String toString() {
-//        return label;
+
+    private String label;
+
+    Value(String label) {
+        this.label = label;
     }
+
+    @Override
+    public String toString() {
+        return label;
+    }
+}

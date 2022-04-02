@@ -5,15 +5,15 @@ public class BlackjackCard extends Card {
     }
     public int getScore() {
         return switch (value) {
-            case ДВОЙКА -> 2;
-            case ТРОЙКА -> 3;
-            case ЧЕТВЕРКА -> 4;
-            case ПЯТЁРКА -> 5;
-            case ШЕСТЁРКА -> 6;
-            case СЕМЁРКА -> 7;
-            case ВОСЬМЁРКА -> 8;
-            case ДЕВЯТКА -> 9;
-            case ТУЗ -> 11; //пока забей
+            case TWO -> 2;
+            case THREE -> 3;
+            case FOUR -> 4;
+            case FIVE -> 5;
+            case SIX -> 6;
+            case SEVEN -> 7;
+            case EIGHT -> 8;
+            case NINE -> 9;
+            case ACE -> 11; //пока забей
             default -> 10;
         };
     }

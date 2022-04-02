@@ -7,6 +7,6 @@ public class Play {
 
         Deck deck = new Deck();
         deck.shuffle();
-//        deck.cards.forEach(System.out::println);
+        deck.cards.forEach(System.out::println);
     }
 }
