@@ -1,4 +1,5 @@
 public enum Mast {
+
     HEARTS ("ЧЕРВИ"),
     DIAMONDS ("БУБИ"),
     SPADES ("ПИКИ"),
