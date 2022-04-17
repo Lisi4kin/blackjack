@@ -5,8 +5,6 @@ public class Game {
     Deck deck;
     Player player;
     Player dealer;
-    final String win = "Вы выиграли!!! :)";
-    final String lose = "Вы проиграли :(";
 
     public Game() {
         deck = new Deck();
@@ -14,7 +12,7 @@ public class Game {
         dealer = new Player();
     }
 
-    public boolean isFinished() {
+    public boolean isPlayerLost() {
         if (player.getScore() > 21) {
             return true;
         }
@@ -23,45 +21,41 @@ public class Game {
 
 
     public void startGame() {
+        player.clearHand();
         deck.shuffle();
         player.addCard(deck.getOneCard());
         player.addCard(deck.getOneCard());
         dealer.addCard(deck.getOneCard());
     }
 
-    public static void restartGame(Game game) {
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Начать игру заного? (да/нет) : ");
-        String answer = scan.next();
-        switch (answer) {
-            case "да", "yes", "lf" -> Play.play(game);
-            case "нет", "ytn", "no" -> endGame();
-            default -> endGame();
-        }
-    }
-
-    public static void endGame() {
-        System.out.println("Спасибо за игру! :)");
-    }
-
-    public void check(Game game) {
-        if (isFinished() == false) {
-            System.out.println(win);
-            restartGame(game);
+    public boolean playerTakesCard() {
+        if (askAction()) {
+            player.addCard(deck.getOneCard());
+            return true;
         } else {
-            System.out.println(lose);
-            restartGame(game);
+            return false;
+        }
+    }
+    public boolean dealerTakesCard() {
+        if (dealer.getScore() < 17) {
+            dealer.addCard(deck.getOneCard());
+            return true;
+        } else {
+            return false;
         }
     }
 
-    public void chois(Game game) {
+    public boolean askAction() {
         Scanner scan = new Scanner(System.in);
-        System.out.print("Хотите взять ещё карту? (да/нет) : ");
         String answer = scan.next();
-        switch (answer) {
-            case "да", "yes", "lf" -> player.addCard(deck.getOneCard());
-            case "нет", "ytn", "no" -> check(game);
-            default -> check(game);
-        }
+        return switch (answer) {
+            case "да", "yes", "lf" -> true;
+            case "нет", "ytn", "no" -> false;
+            default -> askAction();
+        };
     }
+//    public int whoWin() {
+//
+//    }
+}
 

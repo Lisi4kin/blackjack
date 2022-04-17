@@ -1,6 +1,3 @@
-import java.util.Scanner;
-import java.util.Timer;
-
 public class Play {
 
     public static void main(String[] args) {
@@ -11,19 +8,40 @@ public class Play {
     }
 
     public static void play(Game game) {
-        game.player.clearHand();
         game.startGame();
-        showPlayerHand(game);
-        System.out.println("Score = " + game.player.getScore());
+        showHand(game.player);
+        System.out.println("Ход игрока");
+        for (; ; ) {
+            System.out.print("Хотите взять ещё карту? (да/нет) : ");
+            if (game.playerTakesCard()) {
+                showHand(game.player);
+                if (game.isPlayerLost()) {
+                    System.out.println("Перебор");
+                    break;
+                }
+            } else {
+                break;
+            }
 
-        Game.restartGame(game);
+        }
+        System.out.println("Ход дилера");
+        showHand(game.dealer);
+        for (;;) {
+            if (game.dealerTakesCard()) {
+                showHand(game.dealer);
+            } else {
+                break;
+            }
+        }
+        play(game);
     }
 
-    public static void showPlayerHand(Game game) {
-        for (int i = 0; i < game.player.hand.size(); i++) {
-            System.out.print(game.player.hand.get(i) + " ");
+    public static void showHand(Player player) {
+        for (int i = 0; i < player.hand.size(); i++) {
+            System.out.print(player.hand.get(i) + " ");
         }
         System.out.println();
+        System.out.println("Score = " + player.getScore());
     }
 
 }
