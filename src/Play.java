@@ -1,15 +1,22 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.stream.Stream;
+import java.util.Scanner;
+import java.util.Timer;
 
 public class Play {
+
     public static void main(String[] args) {
 
+
         Game game = new Game();
+        play(game);
+    }
+
+    public static void play(Game game) {
+        game.player.clearHand();
         game.startGame();
         showPlayerHand(game);
-
         System.out.println("Score = " + game.player.getScore());
+
+        Game.restartGame(game);
     }
 
     public static void showPlayerHand(Game game) {
@@ -18,4 +25,5 @@ public class Play {
         }
         System.out.println();
     }
+
 }
