@@ -1,11 +1,2 @@
 /.idea/
-<<<<<<< HEAD
-/out/
-=======
-/out/production/blackjack/Card.class
-/out/production/blackjack/Deck.class
-/out/production/blackjack/Mast.class
-/out/production/blackjack/Play.class
-/out/production/blackjack/Value.class
->>>>>>> dcbb763c48e9438eaef2016330d5fbed17b8e0eb
-/out/
+/out/*
