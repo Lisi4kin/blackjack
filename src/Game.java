@@ -12,15 +12,8 @@ public class Game {
         dealer = new Player();
     }
 
-    public boolean isPlayerLost() {
-        if (player.getScore() > 21) {
-            return true;
-        }
-        return false;
-    }
-
-
     public void startGame() {
+        dealer.clearHand();
         player.clearHand();
         deck.shuffle();
         player.addCard(deck.getOneCard());
@@ -36,6 +29,7 @@ public class Game {
             return false;
         }
     }
+
     public boolean dealerTakesCard() {
         if (dealer.getScore() < 17) {
             dealer.addCard(deck.getOneCard());
@@ -54,8 +48,14 @@ public class Game {
             default -> askAction();
         };
     }
-//    public int whoWin() {
-//
-//    }
+
+    // + == победа игрока, 0 == ничья, - == победа дилера
+    public int whoWin() {
+        return player.getScore() - dealer.getScore();
+    }
+
+    public boolean overdraw(Player player) {
+        return player.getScore() > 21;
+    }
 }
 
